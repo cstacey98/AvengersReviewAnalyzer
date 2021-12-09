@@ -88,8 +88,12 @@ def create_scatter_plot(x, y, x_label, y_label, title, filename):
         y_num = (m * x_num) + b
         best_fit_y.append(y_num)
 
+    round_value = 4
+    if 'sentiment' in filename:
+        round_value = 2
+
     plt.plot(best_fit_x, best_fit_y, color='green', linestyle='dashed', linewidth=3, marker='o', markerfacecolor='blue',
-             markersize=0, label='line of best fit (y = ' + str(round(m, 2)) + 'x + ' + str(round(b, 2)) + ')')
+             markersize=0, label='line of best fit (y = ' + str(round(m, round_value)) + 'x + ' + str(round(b, round_value)) + ')')
 
     # show a legend on the plot
     plt.legend()
