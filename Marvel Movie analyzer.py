@@ -226,17 +226,25 @@ if __name__ == '__main__':
         if len(top_twenty_categories_lower) > 20:
             top_twenty_categories_lower.pop()
 
+    print("Top categories for critics: ")
+    print(top_twenty_categories_critics)
     for category in top_twenty_categories_critics:
         category_list.append(category[0])
 
+    print("Top categories for average viewers: ")
+    print(top_twenty_categories_users)
     for category in top_twenty_categories_users:
         if category[0] not in category_list:
             category_list.append(category[0])
 
+    print("Top categories for positive reviews: ")
+    print(top_twenty_categories_positive)
     for category in top_twenty_categories_positive:
         if category[0] not in category_list:
             category_list.append(category[0])
 
+    print("Top categories for lower scores: ")
+    print(top_twenty_categories_lower)
     for category in top_twenty_categories_lower:
         if category[0] not in category_list:
             category_list.append(category[0])
